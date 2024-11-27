@@ -25,12 +25,13 @@ app.get('/dynamicbtn', (req, res) => {
 });
 
 app.post('/adduser', (req, res) => {
-    const { username, userphone } = req.body;
+    const { usertask, userstatus , userdate } = req.body;
     let obj = {
         id: Date.now(),
-        name: username,
-        phone: userphone
-    }
+        task: usertask,
+        status: userstatus,
+        date: userdate
+    }    
     record.push(obj);
     console.log("User Add Successfully.");
     return res.redirect('/');
@@ -53,11 +54,12 @@ app.get('/edituser', (req, res) => {
     });
 });
 app.post('/updateuser', (req, res) => {
-    const { updateId, username, userphone } = req.body;
+    const { updateId, usertask, userstatus , userdate } = req.body;
     let updateuser = record.map(val => {
         if (val.id == updateId) {
-            val.name = username;
-            val.phone = userphone;
+            val.task = usertask;
+            val.status = userstatus;
+            val.date = userdate;
         }
         return val;
     });

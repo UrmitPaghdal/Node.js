@@ -13,7 +13,7 @@
         }
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #eef5f9;
             color: #333;
             scroll-behavior: smooth;
             line-height: 1.6;
@@ -24,7 +24,7 @@
 
         /* Navbar Styles */
         .navbar {
-            background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+            background: linear-gradient(90deg, #2193b0, #6dd5ed);
             color: white;
             padding: 20px 40px;
             display: flex;
@@ -43,22 +43,21 @@
         }
         .navbar a {
             color: white;
-            text-decoration: none;
-            margin: 0 20px;
+            margin: 0 15px;
             font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 30px;
+            padding: 10px 15px;
+            border-radius: 25px;
             transition: all 0.3s ease;
         }
         .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(90deg, #fcb045, #fd1d1d, #833ab4);
+            background: linear-gradient(90deg, #6dd5ed, #2193b0);
             color: white;
-            padding: 100px 20px;
+            padding: 80px 20px;
             text-align: center;
             border-bottom-left-radius: 50px;
             border-bottom-right-radius: 50px;
@@ -68,9 +67,10 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 20px;
+            letter-spacing: 1.5px;
         }
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
         }
 
@@ -85,15 +85,14 @@
         }
         .contact h2 {
             font-size: 2.5rem;
-            color: #833ab4;
+            color: #2193b0;
             margin-bottom: 20px;
         }
         .contact p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
         }
         .contact-form {
             display: flex;
@@ -111,11 +110,11 @@
             transition: border 0.3s ease;
         }
         .contact-form input:focus, .contact-form textarea:focus {
-            border-color: #fd1d1d;
+            border-color: #2193b0;
         }
         .contact-form button {
             padding: 15px;
-            background-color: #fd1d1d;
+            background: linear-gradient(90deg, #43cea2, #185a9d);
             color: white;
             font-size: 1.1rem;
             border-radius: 30px;
@@ -123,18 +122,17 @@
             transition: all 0.3s ease;
         }
         .contact-form button:hover {
-            background-color: #833ab4;
-            transform: translateY(-3px);
+            transform: scale(1.05);
         }
         .contact-form button:active {
-            transform: translateY(2px);
+            transform: scale(0.95);
         }
 
         /* Footer */
         .footer {
             text-align: center;
             padding: 30px 20px;
-            background: linear-gradient(90deg, #833ab4, #fd1d1d, #fcb045);
+            background: linear-gradient(90deg, #43cea2, #185a9d);
             color: white;
             margin-top: 50px;
         }
@@ -144,13 +142,13 @@
             transition: color 0.3s ease;
         }
         .footer a:hover {
-            color: #fcb045;
+            color: #6dd5ed;
         }
 
         /* Media Queries */
         @media (max-width: 768px) {
             .navbar {
-                padding: 20px 10px;
+                padding: 15px 10px;
             }
             .hero h1 {
                 font-size: 2.2rem;
@@ -158,15 +156,12 @@
             .contact h2 {
                 font-size: 2rem;
             }
-            .contact-form input, .contact-form textarea {
-                font-size: 1rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="navbar">
-        <div class="logo">Contact Page</div>
+        <div class="logo">Get in Touch</div>
         <div>
             <a href="/">Home</a>
             <a href="/about">About</a>
@@ -175,27 +170,23 @@
     </div>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>Get in Touch with Us</h1>
-            <p>We are here to answer any questions you may have. Reach out to us today!</p>
-        </div>
+        <h1>We’d Love to Hear From You!</h1>
+        <p>Got questions, feedback, or partnership ideas? Let's connect and make things happen!</p>
     </section>
 
     <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>We would love to hear from you! Please fill out the form below, and we’ll get back to you as soon as possible.</p>
-            <form class="contact-form" action="/submit-contact" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
+        <h2>Contact Our Team</h2>
+        <p>Our team is here to assist you. Fill out the form below, and we’ll respond promptly.</p>
+        <form class="contact-form" action="/submit-contact" method="POST">
+            <input type="text" name="name" placeholder="Your Full Name" required>
+            <input type="email" name="email" placeholder="Your Email Address" required>
+            <textarea name="message" placeholder="How can we help you?" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2024 Index Page. All rights reserved. <a href="/privacy">Privacy Policy</a></p>
+        <p>&copy; 2024 Contact Us. Your feedback drives us forward. <a href="/privacy">Privacy Policy</a></p>
     </footer>
 </body>
 </html>
