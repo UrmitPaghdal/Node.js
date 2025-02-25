@@ -1,0 +1,73 @@
+<%- include('../header') %>
+
+
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title m-b-0">View Exsubcategory</h5>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Subcategory</th>
+                                    <th scope="col">Exsubcategory</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% exsubcategory.map((exsubcat,index)=>{ %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= ++index %>
+                                        </th>
+                                        <td>
+                                            <%= exsubcat.categoryId.category %>
+                                        </td>
+                                        <td>
+                                            <%= exsubcat.subcategoryId.subcategory %>
+                                        </td>
+                                        <td>
+                                            <%= exsubcat.exsubcategory %>
+                                        </td>
+                                        <td>
+                                            <a href="/exsubcategory/deleteexsubcategory?id=<%= exsubcat?.id %>"
+                                                class="btn btn-danger btn-sm">Delete</a>
+
+
+                                            <a href="/exsubcategory/editexsubcategory?id=<%= exsubcat?.id %>"
+                                                class="btn btn-primary btn-sm">Edit</a>
+                                        </td>
+                                        <td>
+
+                                            <% if(exsubcat?.status==="active" ) { %>
+                                                <a href="/exsubcategory/changestatus?id=<%= exsubcat?.id %>&status=deactive"
+                                                    class="btn btn-success btn-sm">
+                                                    <%= exsubcat?.status %>
+                                                </a>
+                                                <% } else { %>
+                                                    <a href="/exsubcategory/changestatus?id=<%= exsubcat?.id %>&status=active"
+                                                        class="btn btn-danger btn-sm">
+                                                        <%= exsubcat?.status %>
+                                                    </a>
+                                                    <% } %>
+
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../footer') %>

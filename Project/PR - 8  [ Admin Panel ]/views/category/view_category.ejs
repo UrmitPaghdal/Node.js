@@ -1,0 +1,66 @@
+<%- include('../header') %>
+
+
+    <div class="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title m-b-0">View Category</h5>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% categories.map((cat,index)=>{ %>
+                                    <tr>
+                                        <th scope="row">
+                                            <%= ++index %>
+                                        </th>
+                                        <td>
+                                            <%= cat?.category %>
+                                        </td>
+                                        <td>
+                                            <a href="/category/deletecategory?id=<%= cat?.id %>"
+                                                class="btn btn-danger btn-sm">Delete</a>
+
+
+                                            <a href="/category/editcategory?id=<%= cat?.id %>"
+                                                class="btn btn-primary btn-sm">Edit</a>
+                                        </td>
+                                        <td>
+
+                                            <% if(cat?.status==="active" ) { %>
+                                                <a href="/category/changestatus?id=<%= cat?.id %>&status=deactive"
+                                                    class="btn btn-success btn-sm">
+                                                    <%= cat?.status %>
+                                                </a>
+                                                <% } else { %>
+                                                    <a href="/category/changestatus?id=<%= cat?.id %>&status=active"
+                                                        class="btn btn-danger btn-sm">
+                                                        <%= cat?.status %>
+                                                    </a>
+                                                    <% } %>
+
+                                        </td>
+                                    </tr>
+                                    <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../footer') %>
